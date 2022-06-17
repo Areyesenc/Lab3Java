@@ -62,9 +62,16 @@ public class DobbleGame {
         }
     }
 
-  //facil
+  //facil - constructor1
 void createGame(){
-  
+  try{
+    system.out.print("coloca el numero de cartas: ");
+    int numbercards = integer.parseInt(input.nextLine());
+    dobble = new Dobble(numbercards);
+    sysetm.out.println("juego creado");
+    
+  }catch(exception){
+  }
 }
   //facil .. --addP(new player(name))--  2 jugadores como mínimo .. 
 void register(){
