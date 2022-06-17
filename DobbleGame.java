@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
@@ -14,13 +16,19 @@ public class DobbleGame {
         players = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         int option;
-  
+        
 //playround para iniciar el juego.  
   
    public void playRound() {
      
    }
-  
+/*  
+Idea para agregar un jugador y quede en memoria... ojo con el override.
+   public void addPlayer(Player player) {
+        players.add(player);
+    }
+*/
+     
   //para clase "play" usa idea "switch - case(del 1 al 4) - defatul (por si menu no existe) ...
   
   //idea del menu como sería...
@@ -80,7 +88,7 @@ void createGame(){
 void register(){
     System.out.print("Nombre del jugador: ");
     String name = input.nextLine()
-    addPlayer(new Player(name)); //clase player
+  //  addPlayer(new Player(name)); //clase player
 }
   
   //(ver la hoja)
