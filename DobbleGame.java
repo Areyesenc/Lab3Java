@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 //Main.java
 //public static void main(String[] args) {
@@ -34,6 +35,8 @@ public class DobbleGame {
         System.out.println("4. Visualizar estado completo del juego");
         system.out.println("5. Salir");
         //syso ("INTRODUZCA SU OPCION" + algo);
+        System.out.print("\t: ");
+        return Integer.parseInt(input.nextLine());
   }
   
 // 
