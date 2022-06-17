@@ -78,7 +78,9 @@ void createGame(){
 }
   //facil .. --addP(new player(name))--  2 jugadores como mínimo .. 
 void register(){
-    
+    System.out.print("Nombre del jugador: ");
+    String name = input.nextLine()
+    addPlayer(new Player(name));
 }
   
   //(ver la hoja)
