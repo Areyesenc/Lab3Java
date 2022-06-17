@@ -80,7 +80,7 @@ void createGame(){
 void register(){
     System.out.print("Nombre del jugador: ");
     String name = input.nextLine()
-    addPlayer(new Player(name));
+    addPlayer(new Player(name)); //clase player
 }
   
   //(ver la hoja)
