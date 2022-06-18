@@ -16,6 +16,7 @@ public class DobbleGame {
         players = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         int option;
+     
         
 //playround para iniciar el juego.  
   
@@ -81,7 +82,8 @@ void createGame(){
     dobble = new Dobble(numbercards);
     sysetm.out.println("juego creado");
     
-  }catch(exception){
+  }catch(exception ignored){
+    system.out.println("Input invalido");
   }
 }
   //facil .. --addP(new player(name))--  2 jugadores como mínimo .. 
@@ -94,7 +96,7 @@ void register(){
   //(ver la hoja)
 void playMenu(){
     if (players.size() < 2){
-    System.out.println("debes añadir al menos dos jugadores"
+    System.out.println("debes añadir al menos dos jugadores");
     return;
   }
   if (dobble == null) { //esto indica que si no se ha creado un juego, regresa al menu para crearlo!
