@@ -175,3 +175,24 @@ void status(){
                 .append("\n");
         return stringBuilder.toString();
     }
+
+    public Player getWinner() {
+        if (!gameOver) return null;
+        return players.stream()
+                .reduce((player, player2) -> player2.getCards()
+                        .size() > player.getCards()
+                        .size() ? player2 : player)
+                .orElse(null);
+    }
+
+    private Player getPlayerByName(String name) {
+        try {
+            return players.stream()
+                    .filter(player -> player.getName()
+                            .equals(name))
+                    .collect(Collectors.toList())
+                    .get(0);
+        } catch (Exception e) {
+            return null;
+        }
+    }
