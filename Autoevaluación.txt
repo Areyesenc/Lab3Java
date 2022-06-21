@@ -1,0 +1,33 @@
+Autoevaluación
+
+0: No realizado.
+0.25: Implementación con problemas mayores (funciona 25% de las veces o no funciona)
+0.5: Implementación con funcionamiento irregular (funciona 50% de las veces)
+0.75: Implementación con problemas menores (funciona 75% de las veces)
+1: Implementación completa sin problemas (funciona 100% de las veces)
+
+RF:
+
+1) 1
+2) 1
+3) 1
+4) 1
+5) 1
+6) 0.50
+7) 0
+8) 0
+
+RNF
+
+Lenguaje, Java - IntelliJ IDEA 2022.1.2 OpenJDK Versión 11: 1
+Documentación: 1
+Github: 0.5
+Organización: 0.5
+Prerrequisitos: 1
+
+Informe
+
+Documentación: 1
+
+
+
