@@ -25,13 +25,44 @@ public class DobbleGame {
         currentIndex = 0;
         input = new Scanner(System.in);
     }
-     
+
+    public void addPlayer(Player player) 
+       players.add(player);
+    }
      
 //playround para iniciar el juego.  
   
      
    public void playRound() {
-     
+      try {
+        //muestra dos cartas
+            Card a = dobble.getCards()
+                    .get(currentIndex);
+            Card b = dobble.getCards()
+                    .get(++currentIndex);
+            System.out.println("revelando las cartas..");
+            System.out.println(a);
+            System.out.println(b);
+            boolean correct = false;
+            while (!correct) {
+              // introducir el nombre del jugador que ha introducido la respuesta correcta
+              System.out.print("nombre del jugador: ");
+                String playerName = input.nextLine()
+                        .strip();
+                Player player = getPlayerByName(playerName);
+                if (player != null) {
+                    // añade la carta al jugador
+                    player.addCard(a);
+                    correct = true;
+                } else {
+                    System.out.printf("jugador %s no existe.%n", playerName);
+                }
+            }
+        } catch (IndexOutOfBoundsException e) {
+        //no se lanzan mas cartas
+            gameOver = true;
+            System.out.println("Game over!");
+        }
    }
 /*  
 Idea para agregar un jugador y quede en memoria... ojo con el override.
@@ -100,10 +131,12 @@ void createGame(){
 void register(){
     System.out.print("Nombre del jugador: ");
     String name = input.nextLine()
-  //  addPlayer(new Player(name)); //clase player
+    addPlayer(new Player(name)); //clase player
 }
   
   //(ver la hoja)
+
+//empieza el juego
 void playMenu(){
     if (players.size() < 2){
     System.out.println("debes añadir al menos dos jugadores");
@@ -127,3 +160,18 @@ void status(){
     System.out.println(this);
     }
 }
+
+    @Override
+    public String toString() {
+        if (dobble == null) return "No hay un juego en progreso!";
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("estadistica dsewl juego:\n");
+        for (Player player : players) {
+            stringBuilder.append(player)
+                    .append("\n");
+        }
+        stringBuilder.append("estatus del juego: ")
+                .append(gameOver ? String.format("Gano el jugador %s", getWinner().getName()) : "en progreso..")
+                .append("\n");
+        return stringBuilder.toString();
+    }
