@@ -16,10 +16,20 @@ public class DobbleGame {
         players = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         int option;
+        boolean gameOver;    
+        private Dobble dobble;
+
+    public DobbleGame() {
+        dobble = null;
+        players = new ArrayList<>();
+        currentIndex = 0;
+        input = new Scanner(System.in);
+    }
      
-        
+     
 //playround para iniciar el juego.  
   
+     
    public void playRound() {
      
    }
@@ -103,11 +113,17 @@ void playMenu(){
     System.out.println("crea un juego");
     return;
     
+   while (!gameOver) {
+     playRound();
+   }
+   System.out.println(this);
+      
   //si esta correcto todo, entonces aquí ya se podría jugar y ver status.. 
 }
   
                        
 //quien gana y quien pierde... debería ir dentro del metodo toString() cómo representación del estado del juego (?)
 void status(){
-    
+    System.out.println(this);
+    }
 }
