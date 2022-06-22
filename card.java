@@ -34,3 +34,13 @@ public class Card {
         return symbols.stream()
                 .anyMatch(s -> s.equals(symbol));
     }
+
+        @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Symbol symbol : symbols)
+            stringBuilder.append(symbol)
+                    .append(" ");
+        return stringBuilder.toString()
+                .strip();
+    }
