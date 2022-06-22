@@ -40,3 +40,26 @@ public class Dobble {
         Collections.shuffle(cards);
         return cards.subList(0, numberOfCards);
     }
+    
+        private static int getPrimeForKCards(int numberOfCards) {
+        List<Integer> primes = getPrimseUpTo(numberOfCards);
+        for (int prime : primes) {
+            if (prime * prime + prime + 1 >= numberOfCards) return prime;
+        }
+        return primes.get(primes.size() - 1);
+    }
+    /**
+     * Obtener números primos hasta n
+     *
+     * @param n el límite superior
+     * @return una lista de números primos hasta n
+     */
+    private static List<Integer> getPrimseUpTo(int n) {
+        return IntStream.range(2, n + 1)
+                .boxed()
+                .filter(Dobble::isPrime)
+                .collect(Collectors.toList());
+    }
+
+
+}
