@@ -41,8 +41,8 @@ public class DobbleGame {
             Card b = dobble.getCards()
                     .get(++currentIndex);
             System.out.println("revelando las cartas..");
-            System.out.println(a);
-            System.out.println(b);
+            System.out.println("Jugador1: " + a);
+            System.out.println("jugador2: " + b);
             boolean correct = false;
             while (!correct) {
               // introducir el nombre del jugador que ha introducido la respuesta correcta
