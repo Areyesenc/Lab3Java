@@ -28,3 +28,9 @@ public class Card {
     }
   
   //Faltaría el MATCH entre simbolos según los jugadores.
+//AQUI TA EL MATCH :D
+    
+    public boolean hasSymbol(Symbol symbol) {
+        return symbols.stream()
+                .anyMatch(s -> s.equals(symbol));
+    }
